@@ -18,8 +18,10 @@ public class Range implements IntegerSequence{
   }
 
   public void reset(){
-
+    this.start = start;
+    this.end = end;
   }
+
   public int length(){
 
   }
