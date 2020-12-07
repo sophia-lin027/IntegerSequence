@@ -14,7 +14,7 @@ public class Range implements IntegerSequence{
       current = start;
     }
     catch (IllegalArgumentException e) {
-      System.out.println("Error: Start value is greater than end value");
+      throw new IllegalArgumentException("Error: Start value is greater than end value");
     }
   }
 
@@ -26,6 +26,7 @@ public class Range implements IntegerSequence{
 
   public int length(){
     return end - start + 1;
+    // another and very ineffective way to do it:
     // int count = 0;
     // for (int i = start; i < end + 1; i++) {
     //   count++;
