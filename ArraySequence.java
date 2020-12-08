@@ -7,13 +7,17 @@ public class ArraySequence implements IntegerSequence{
     currentIndex = 0;
   }
   public int length() {
-    return 0;
+    return data.length;
   }
   public int next() {
-    return 0;
+    if (hasNext() == false) {
+      throw new NoSuchElementException("There are no more values");
+    }
+    currentIndex++;
+    return data[currentIndex - 1];
   }
   public boolean hasNext() {
-    return true;
+    return (currentIndex < length());
   }
 
 
@@ -27,6 +31,11 @@ public class ArraySequence implements IntegerSequence{
   //This constructor will copy ALL values of the `otherseq` into the data array.
 
   public ArraySequence(IntegerSequence otherseq){
-
+    currentIndex = 0;
+    data = new int[otherseq.length()];
+    for (int i = 0; i < otherseq.length(); i++) {
+      data[i] = otherseq.next();
+    }
+    otherseq.reset();
   }
 }
