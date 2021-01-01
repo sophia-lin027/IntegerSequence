@@ -23,7 +23,9 @@ public class ArraySequence implements IntegerSequence{
 
   /*Construct the sequence by copying values from the other array into the data array*/
   public ArraySequence(int [] other){
-    data = other;
+    for (int i = 0; i < data.length; i++) {
+      other[i] = data[i];
+    }
     currentIndex = 0;
   }
 
