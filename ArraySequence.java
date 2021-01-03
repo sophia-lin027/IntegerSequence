@@ -23,10 +23,11 @@ public class ArraySequence implements IntegerSequence{
 
   /*Construct the sequence by copying values from the other array into the data array*/
   public ArraySequence(int [] other){
-    for (int i = 0; i < data.length; i++) {
+    currentIndex = 0;
+    data = new int[other.length];
+    for (int i = 0; i < other.length; i++) {
       other[i] = data[i];
     }
-    currentIndex = 0;
   }
 
   //Postcondition: The otherseq will be reset.
